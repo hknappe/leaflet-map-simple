@@ -34,10 +34,12 @@
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
     L.tileLayer(
-    'https://opencache{s}.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=${id}&zoom={z}&x={x}&y={y}', {
-      attribution: '<a href="http://www.kartverket.no/">Kartverket</a>'
-  }).addTo(map);  
-
+    'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://osm.org/copyright">\
+        OpenStreetMap</a> contributors, &copy;\
+        <a href="https://carto.com/attribution">CARTO</a>'
+  }).addTo(map);
+    
   /* Display a point marker with pop-up text */
   L.marker([60.14, 10.25]).addTo(map) // EDIT marker coordinates
   .bindPopup("Insert pop-up text here"); // EDIT pop-up text message
